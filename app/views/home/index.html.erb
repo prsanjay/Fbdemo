@@ -1,0 +1,14 @@
+<div class="row">
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %><br />
+  <div class="col-lg-3">
+    <%= render 'shared/user_info' %>
+  </div>
+  <div id="newsfeed" class="col-lg-6">
+    <%= render 'posts/form' %>
+    <br>
+   
+  </div>
+  <div class="col-lg-3">
+    <%= render 'shared/links' %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div id="links" class="well">
+  
+  <h5>
+    <%= link_to 'Friends', friends_user_path(current_user) %>
+  </h5>
+  <h5>
+    <%= link_to 'Followers', followers_user_path(current_user) %>
+  </h5>
+  <h5>
+    <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+  </h5>
+</div>

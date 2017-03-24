@@ -1,0 +1,24 @@
+<div class="info">
+  <h4 class="name"><%= link_to post.user.name, user_path(post.user) %></h4>
+  <span class="action">created a <%= link_to 'post', post %></span>
+</div>
+<div class="content">
+  <% if post.pictures.present? %>
+    <div class="attachment">
+      <%= image_tag post.pictures.first %>
+    </div>
+  <% end %>
+  <div class="points">
+    <span class="comments-count"><%= pluralize(post.comments.count, 'comment') %></span>
+    <div class="pull-right">
+      <% if belongs_to_user?(post) %>
+        <%= link_to edit_post_path(post), class: 'btn btn-primary btn-sm' do %>
+          <% fa_icon 'pencil' %>
+        <% end %>
+        <%= link_to post_path(post), method: :delete, class:'btn btn-danger btn-sm', remote: remote do %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render 'shared/actions', resource: post %>

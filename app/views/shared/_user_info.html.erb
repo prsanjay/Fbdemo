@@ -1,0 +1,11 @@
+<div id="user-info" class="well">
+  <div class="text-center">
+    <%#= render 'shared/avatar', user: @user %><br>
+    <h5><%= @user.name %></h5>
+  </div>
+  <h5>
+    <%= pluralize(@user.posts.count, 'post') %>
+  </h5>
+  <br>
+  
+</div>
